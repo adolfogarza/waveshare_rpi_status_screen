@@ -15,7 +15,7 @@ try:
     print("Show time")
     epd.init(epd.PART_UPDATE)    
     epd.Clear(0xFF)
-    font15 = ImageFont.truetype('fonts/Robotto-Regular.ttf', 15)
+    font15 = ImageFont.truetype('fonts/Roboto-Regular.ttf', 15)
     time_image = Image.new('1', (epd2in13.EPD_HEIGHT, epd2in13.EPD_WIDTH), 255) # 255: clear the frame
     time_draw = ImageDraw.Draw(time_image)
     while (True):
