@@ -21,7 +21,7 @@ try:
 	
 	# Define fonts
 	font18 = ImageFont.truetype('fonts/Roboto-Regular.ttf', 18)
-	font24 = ImageFont.truetype('fonts/Roboto-Regular.ttf', 24)
+    font24 = ImageFont.truetype('fonts/Roboto-Regular.ttf', 24)
 	fontbold24 = ImageFont.truetype('fonts/Roboto-Bold.ttf', 24)
 	
 	# Waiting for IP-Address
