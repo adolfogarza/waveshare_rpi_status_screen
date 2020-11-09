@@ -20,9 +20,9 @@ try:
 	epd.Clear(0xFF)
 	
 	# Define fonts
-	font18 = ImageFont.truetype('fonts/Roboto-Regular.ttf', 18)
-	font24 = ImageFont.truetype('fonts/Roboto-Regular.ttf', 24)
-	fontbold24 = ImageFont.truetype('fonts/Roboto-Bold.ttf', 24)
+	font18 = ImageFont.truetype('fonts/arial.ttf', 18)
+	font24 = ImageFont.truetype('fonts/arial.ttf', 18)
+	fontbold24 = ImageFont.truetype('fonts/arial.ttf', 18)
 	
 	# Waiting for IP-Address
 	if not tryGetIPAddress():
