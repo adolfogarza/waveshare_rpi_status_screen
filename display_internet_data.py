@@ -33,7 +33,7 @@ try:
 	draw = ImageDraw.Draw(image)
 	draw.text((10, 10), f'host name: {host_name}', font = preferredFont, fill = 0)
 	draw.text((10, 35), f'host ip: {host_ip}', font = preferredFont, fill = 0)
-	draw.text((10, 65), f'gateway: {gateway}', font = preferredFont, fill = 0)
+	draw.text((10, 60), f'gateway: {gateway}', font = preferredFont, fill = 0)
 	epd.display(epd.getbuffer(image.rotate(180)))
 	epd.sleep()
 		
