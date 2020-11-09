@@ -15,13 +15,13 @@ def tryGetIPAddress():
 		return 0
 
 try:
-    epd = epd2in13.EPD()
-    epd.init(epd.FULL_UPDATE)
-    epd.Clear(0xFF)
+	epd = epd2in13.EPD()
+	epd.init(epd.FULL_UPDATE)
+	epd.Clear(0xFF)
 	
 	# Define fonts
 	font18 = ImageFont.truetype('fonts/Roboto-Regular.ttf', 18)
-    font24 = ImageFont.truetype('fonts/Roboto-Regular.ttf', 24)
+	font24 = ImageFont.truetype('fonts/Roboto-Regular.ttf', 24)
 	fontbold24 = ImageFont.truetype('fonts/Roboto-Bold.ttf', 24)
 	
 	# Waiting for IP-Address
@@ -54,7 +54,7 @@ try:
 	draw.text((10, 95), date_time, font = font18, fill = 0)
 	epd.display(epd.getbuffer(image.rotate(180)))
 	epd.sleep()
-        
+		
 except:
 	print( 'traceback.format_exc():\n%s',traceback.format_exc())
 	exit()
