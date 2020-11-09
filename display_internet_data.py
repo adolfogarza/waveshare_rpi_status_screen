@@ -10,7 +10,7 @@ import datetime
 
 def tryGetIPAddress():
 	try:
-		return socket.gethostbyname(socket.gethostname() + ".local")
+		return socket.gethostbyname(socket.gethostname())
 	except:
 		return 0
 
