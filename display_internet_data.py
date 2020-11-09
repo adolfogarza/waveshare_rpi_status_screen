@@ -7,12 +7,7 @@ from PIL import Image,ImageDraw,ImageFont
 import traceback
 import socket
 import datetime
-
-def tryGetIPAddress():
-	try:
-		return socket.gethostbyname(socket.gethostname())
-	except:
-		return 0
+import os
 
 try:
 	epd = epd2in13.EPD()
@@ -21,37 +16,24 @@ try:
 	
 	# Define fonts
 	font18 = ImageFont.truetype('fonts/arial.ttf', 18)
-	font24 = ImageFont.truetype('fonts/arial.ttf', 18)
-	fontbold24 = ImageFont.truetype('fonts/arial.ttf', 18)
 	
-	# Waiting for IP-Address
-	if not tryGetIPAddress():
-		# Drawing warning
-		image = Image.new('1', (epd2in13.EPD_HEIGHT, epd2in13.EPD_WIDTH), 255)  # 255: clear the frame
-		draw = ImageDraw.Draw(image)
-		draw.text((10, 20), "No IP-Address :(", font = font24, fill = 0)
-		draw.text((10, 50), "Plugin Ethernet", font = fontbold24, fill = 0)
-		draw.text((10, 80), "Cable...!", font = fontbold24, fill = 0)
-		epd.display(epd.getbuffer(image.rotate(180)))
-		epd.sleep()
-	while not tryGetIPAddress():
-		time.sleep(10)
-
-	# Collect informations
+	# Collect information
+	gw = os.popen("ip -4 route show default").read().split()
+	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+	s.connect((gw[2], 0))
+	gateway = gw[2]
+	host_ip = s.getsockname()[0]
 	host_name = socket.gethostname() 
-	host_ip = tryGetIPAddress()
-	date_time = str(datetime.datetime.now())[:19] 
 
-	# Drawing informations on diplay
+	# Drawing information on diplay
 	try:
 		image = Image.open('/home/pi/.config/autostart/train.bmp') 
 	except:
 		image = Image.new('1', (epd2in13.EPD_HEIGHT, epd2in13.EPD_WIDTH), 255)  # 255: clear the frame
 	draw = ImageDraw.Draw(image)
-	draw.text((10, 10), "Hostname/IP:", font = font24, fill = 0)
-	draw.text((10, 35), host_name, font = fontbold24, fill = 0)
-	draw.text((10, 65), host_ip, font = fontbold24, fill = 0)
-	draw.text((10, 95), date_time, font = font18, fill = 0)
+	draw.text((10, 10), host_name, font = font18, fill = 0)
+	draw.text((10, 35), host_ip, font = font18, fill = 0)
+	draw.text((10, 65), gateway, font = font18, fill = 0)
 	epd.display(epd.getbuffer(image.rotate(180)))
 	epd.sleep()
 		
