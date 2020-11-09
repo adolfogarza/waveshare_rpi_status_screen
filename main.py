@@ -52,7 +52,7 @@ try:
     print("Show time")
     epd.init(epd.PART_UPDATE)    
     epd.Clear(0xFF)
-    font24 = ImageFont.truetype('/usr/share/fonts/truetype/wqy/wqy-microhei.ttc', 24)
+    font24 = ImageFont.truetype('fonts/Roboto-Black.ttf', 24)
     time_image = Image.new('1', (epd2in13.EPD_HEIGHT, epd2in13.EPD_WIDTH), 255)
     time_draw = ImageDraw.Draw(time_image)
     while (True):
