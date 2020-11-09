@@ -16,7 +16,7 @@ try:
 	epd.Clear(0xFF)
 	
 	# font
-	preferredFont = ImageFont.truetype('fonts/arial.ttf', 16)
+	preferredFont = ImageFont.load_default()
 	
 	# variables
 	current_ssid = ""
