@@ -19,9 +19,9 @@ try:
 	epd.init(epd.lut_full_update)
 	
 	# Define fonts
-	font18 = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeMono.ttf', 18)
-	font24 = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeMono.ttf', 24)
-	fontbold24 = ImageFont.truetype('/usr/share/fonts/truetype/freefont/FreeMonoBold.ttf', 24)
+	font18 = ImageFont.truetype('fonts/Roboto-Regular.ttf', 18)
+	font24 = ImageFont.truetype('fonts/Roboto-Regular.ttf', 24)
+	fontbold24 = ImageFont.truetype('fonts/Roboto-Bold.ttf', 24)
 	
 	# Waiting for IP-Address
 	if not tryGetIPAddress():
