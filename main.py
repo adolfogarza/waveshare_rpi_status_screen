@@ -26,7 +26,7 @@ try:
     draw.pieslice((55, 60, 95, 100), 270, 360, fill = 0)
     draw.polygon([(110,0),(110,50),(150,25)],outline = 0)
     draw.polygon([(190,0),(190,50),(150,25)],fill = 0)
-    font15 = ImageFont.truetype('/usr/share/fonts/truetype/wqy/wqy-microhei.ttc', 15)
+    font15 = ImageFont.truetype('fonts/Roboto-Black.ttf', 15)
     draw.text((110, 60), 'e-Paper demo', font = font15, fill = 0)
     draw.text((110, 80), 'Hello world', font = font15, fill = 0)
     epd.display(epd.getbuffer(image))
