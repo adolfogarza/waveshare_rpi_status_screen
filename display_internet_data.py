@@ -44,9 +44,9 @@ try:
 			image = Image.new('1', (epd2in13.EPD_HEIGHT, epd2in13.EPD_WIDTH), 255)  # 255: clear the frame
 			draw = ImageDraw.Draw(image)
 			draw.text((10, 10), f'ssid: {current_ssid}', font = preferredFont, fill = 0)
-			draw.text((10, 35), f'host name: {current_host_name}', font = preferredFont, fill = 0)
-			draw.text((10, 60), f'host ip: {current_host_ip}', font = preferredFont, fill = 0)
-			draw.text((10, 85), f'gateway: {current_gateway}', font = preferredFont, fill = 0)
+			draw.text((10, 25), f'host name: {current_host_name}', font = preferredFont, fill = 0)
+			draw.text((10, 40), f'host ip: {current_host_ip}', font = preferredFont, fill = 0)
+			draw.text((10, 55), f'gateway: {current_gateway}', font = preferredFont, fill = 0)
 			epd.display(epd.getbuffer(image.rotate(180)))
 			epd.sleep()
 		
