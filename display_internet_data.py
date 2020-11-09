@@ -15,8 +15,9 @@ def tryGetIPAddress():
 		return 0
 
 try:
-	epd = epd2in13.EPD()
-	epd.init(epd.lut_full_update)
+    epd = epd2in13.EPD()
+    epd.init(epd.FULL_UPDATE)
+    epd.Clear(0xFF)
 	
 	# Define fonts
 	font18 = ImageFont.truetype('fonts/Roboto-Regular.ttf', 18)
