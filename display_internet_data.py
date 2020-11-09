@@ -50,7 +50,6 @@ try:
 			epd.display(epd.getbuffer(image.rotate(180)))
 			epd.sleep()
 		
-		print("update cycle")
 		time.sleep(10)
 		
 except:
