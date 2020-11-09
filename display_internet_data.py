@@ -24,6 +24,8 @@ try:
 	current_host_ip = ""
 	current_gateway = ""
 
+	time.sleep(15)
+
 	while True:
 		# get most updated internet data values
 		gw = os.popen("ip -4 route show default").read().split()
