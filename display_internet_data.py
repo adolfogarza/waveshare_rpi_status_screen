@@ -31,9 +31,9 @@ try:
 	except:
 		image = Image.new('1', (epd2in13.EPD_HEIGHT, epd2in13.EPD_WIDTH), 255)  # 255: clear the frame
 	draw = ImageDraw.Draw(image)
-	draw.text((10, 10), host_name, font = font18, fill = 0)
-	draw.text((10, 35), host_ip, font = font18, fill = 0)
-	draw.text((10, 65), gateway, font = font18, fill = 0)
+	draw.text((10, 10), f'Host Name: {host_name}', font = font18, fill = 0)
+	draw.text((10, 35), f'Host IP: {host_ip}', font = font18, fill = 0)
+	draw.text((10, 55), f'Gateway: {gateway}', font = font18, fill = 0)
 	epd.display(epd.getbuffer(image.rotate(180)))
 	epd.sleep()
 		
